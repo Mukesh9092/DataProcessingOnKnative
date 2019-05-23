@@ -1,0 +1,15 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: webhook
+  namespace: default
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: dp215/webhook:latest
+            env:
+              - name: CHANNEL_URL
+                value: my-kafka-channel-channel-xpj46.default.svc.cluster.local
