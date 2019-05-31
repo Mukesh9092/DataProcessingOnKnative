@@ -14,9 +14,11 @@
 ### Config
   ##### One last bit of manual config you will need to do if you have a domain you would like to access the cluster through for ingestion is to copy the *config.yaml.example* file over and fill it out with your domain.
   You can do that with the following command.
+  
   ```bash
   cp templates/config-domain.yaml.example templates/config-domain.yaml
   ```
+  
   #### Now in the *config-domain.yaml* file change the `example.com` to your domain including any subdomains you prefer.
    
 
