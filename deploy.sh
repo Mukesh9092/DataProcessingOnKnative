@@ -20,7 +20,7 @@ ko apply -f ./templates/kafka.yaml
 
 #create the Kafka Channel
 
-kubectl apply -f ./templates/kafka-channel.yaml
+ko apply -f ./templates/kafka-channel.yaml
 
 #We need to get the internal address of this newly created channel, since we will need it later. Luckily we can parse the created YAML with a simple command to get this
 
