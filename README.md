@@ -26,6 +26,7 @@ If you have Knative v0.50 or a similar version installed you can skip straight t
 
 ### Knative Setup
   Not much to it, I have took the commands from the install doc and put them in a handy script for you.
+  
     ```bash
     ./knative_setup.sh
     ```
@@ -36,6 +37,7 @@ If you have Knative v0.50 or a similar version installed you can skip straight t
 
 ### Launching
   Really you just need to do this and wait:
+  
   ```bash
   ./deploy.sh
   ```
@@ -51,6 +53,7 @@ If you have Knative v0.50 or a similar version installed you can skip straight t
   
 ### Cleanup/Undo
   If you have already deployed, you can clean it all up with this:
+  
   ```bash
   ./cleanup.sh
   ```
