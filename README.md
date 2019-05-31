@@ -29,7 +29,8 @@ If you have Knative v0.50 or a similar version installed you can skip straight t
     ```bash
     ./knative_setup.sh
     ```
-    Sometimes you may have to run it twice if certain parts didn't successfully install
+    
+ Sometimes you may have to run it twice if certain parts didn't successfully install
  
 #### Next we move on to deploying the actual pipeline as shown below
 
