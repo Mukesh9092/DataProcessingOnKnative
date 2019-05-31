@@ -25,7 +25,7 @@
 If you have Knative v0.50 or a similar version installed you can skip straight to the Launching instructions, otherwise I have installation instructions below for Knative
 
 ### Knative Setup
-    Not much to it, I have took the commands from the install doc and put them in a handy script for you.
+  Not much to it, I have took the commands from the install doc and put them in a handy script for you.
     ```bash
     ./knative_setup.sh
     ```
