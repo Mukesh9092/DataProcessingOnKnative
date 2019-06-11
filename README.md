@@ -10,6 +10,7 @@
   - Must have proper installion of Go with a $GOPATH setup.
   - Also clone the Knative/eventing repo under your $GOPATH/src folder
   - install the `ko` CLI to deploy Go source code as container images
+  - Set $KO_DOCKER_REPO to your docker repository so that `ko` can work properly
   
 ### Config
   ##### One last bit of manual config you will need to do if you have a domain you would like to access the cluster through for ingestion is to copy the *config.yaml.example* file over and fill it out with your domain.

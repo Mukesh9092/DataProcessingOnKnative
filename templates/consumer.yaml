@@ -27,4 +27,4 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: dp215/consumer:3.1
+            image: dp215/consumer:latest
