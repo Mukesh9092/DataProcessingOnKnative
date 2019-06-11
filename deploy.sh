@@ -4,11 +4,12 @@
 
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 kubectl create ns kafka
+kubectl create ns cassandra
 helm install --name my-kafka --namespace kafka incubator/kafka
 
 #let's add cassandra in from helm as well
 
-install --namespace "cassandra" -n "cassandra" incubator/cassandra
+helm install --namespace cassandra -n "cassandra" incubator/cassandra
 
 #let's run a k8s job, that waits for cassandra to be up, then creates a keyspace (schema), this is because of it takes a minute for the DB to spin up, and the Cassandra client for nodejs, needs to connect to a premade schema.
 
@@ -35,3 +36,4 @@ kubectl apply -f ./templates/webhook.yaml
 kubectl apply -f ./templates/consumer.yaml
 
 #Set up DNS
+kubectl apply -f ./templates/config-domain.yaml

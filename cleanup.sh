@@ -1,6 +1,9 @@
 #!/bin/sh
 
 
+#Remove DNS
+kubectl delete -f ./templates/config-domain.yaml
+
 #remove all the ksvc's we made
 kubectl delete -f ./templates/consumer.yaml
 
