@@ -12,4 +12,4 @@ spec:
             image: dp215/webhook:latest
             env:
               - name: CHANNEL_URL
-                value: 
+                value: my-kafka-channel-channel-bsrbn.default.svc.cluster.local

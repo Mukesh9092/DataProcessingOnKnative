@@ -24,12 +24,20 @@ ko apply -f ./templates/kafka.yaml
 ko apply -f ./templates/kafka-channel.yaml
 
 #We need to get the internal address of this newly created channel, since we will need it later. Luckily we can parse the created YAML with a simple command to get this
-
+ 
 KAFKA_HOSTNAME=$(kubectl get channel my-kafka-channel -o jsonpath='{.status.address.hostname}')
 
-#Now we can inject this address into the code by passing it as an ENV variable to the Knative Service and deploying it like so
+while [ -z $KAFKA_HOSTNAME ]
+do
+    sleep 5
+    KAFKA_HOSTNAME=$(kubectl get channel my-kafka-channel -o jsonpath='{.status.address.hostname}')
+done
 
-sed -i "s/my-kafka-channel[^ ]*/$TEST/" ./templates/webhook.yaml
+
+#Now we can inject this address into the code by passing it as an ENV variable to the Knative Service and deploying it like so
+echo $KAFKA_HOSTNAME
+sed -i "s/value:.*/value: $KAFKA_HOSTNAME/" ./templates/webhook.yaml
+#sed -i "s/my-kafka-channel[^ ]*/$KAFKA_HOSTNAME/" ./templates/webhook.yaml
 kubectl apply -f ./templates/webhook.yaml
 
 #Add the consumer so that it can be fed data from the Kafka Channel
